@@ -1,3 +1,7 @@
 ---
-- import_tasks: docker_install.yml
-- import_tasks: docker_compose_service.yml
+- name: "Perform Docker installation"
+  include_tasks: docker_install.yml
+  when: docker_compose_systemd_install_docker is defined and (docker_compose_systemd_install_docker | bool)
+
+- name: "Setup systemd service"
+  import_tasks: docker_compose_service.yml

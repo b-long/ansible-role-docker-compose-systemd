@@ -1,0 +1,2 @@
+docker_compose_systemd_install_docker: False
+docker_compose_default_path: "/usr/bin/docker-compose"
