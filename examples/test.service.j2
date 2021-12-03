@@ -3,8 +3,8 @@ Description=test docker compose unit
 After=docker.service
 
 [Service]
-ExecStart={{ docker_compose_default_path }} -f {{ item.root_dir }}/docker-compose.yml up
-ExecStop={{ docker_compose_default_path }} -f {{ item.root_dir }}/docker-compose.yml down
+ExecStart={{ item.docker_compose_default_path }} -f {{ item.root_dir }}/docker-compose.yml up
+ExecStop={{ item.docker_compose_default_path }} -f {{ item.root_dir }}/docker-compose.yml down
 
 [Install]
 WantedBy=docker.service
